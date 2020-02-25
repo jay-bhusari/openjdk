@@ -12,7 +12,7 @@ ENV ESUM='82f34d0917c068e49cd23a7350ccc592648b31bad45ea89536577493a043eab6' \
 ENV BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08_openj9-0.18.1/OpenJDK8U-jdk_s390x_linux_openj9_8u242b08_openj9-0.18.1.tar.gz'
 
 RUN set -eux; \
-    curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL}; \
+    && curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL}; \
     && echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; \
     && mkdir -p /usr/local/openjdk-8; \
     && cd /usr/local/openjdk-8; \
