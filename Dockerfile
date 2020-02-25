@@ -13,8 +13,8 @@ ENV BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/downl
 
 RUN set -eux; \
     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL}; \
-    echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; \
-    mkdir -p /usr/local/openjdk-8; \
-    cd /usr/local/openjdk-8; \
-    tar -xf /tmp/openjdk.tar.gz --strip-components=1; \
-    rm -rf /tmp/openjdk.tar.gz;
+    && echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; \
+    && mkdir -p /usr/local/openjdk-8; \
+    && cd /usr/local/openjdk-8; \
+    &&tar -xf /tmp/openjdk.tar.gz --strip-components=1; \
+    && rm -rf /tmp/openjdk.tar.gz;
