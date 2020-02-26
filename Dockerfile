@@ -1,5 +1,9 @@
 FROM debian:9
 
+USER root
+
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales \
     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
